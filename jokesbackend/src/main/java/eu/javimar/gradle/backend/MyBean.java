@@ -7,12 +7,10 @@ import eu.javimar.gradle.jokes.Jokes;
  */
 public class MyBean
 {
-
     public String getData()
     {
         Jokes jokes = new Jokes();
         return jokes.tellJokes();
     }
-
 
 }

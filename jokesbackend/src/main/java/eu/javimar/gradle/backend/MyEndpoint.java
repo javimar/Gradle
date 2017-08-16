@@ -4,7 +4,6 @@ import com.google.api.server.spi.config.Api;
 import com.google.api.server.spi.config.ApiMethod;
 import com.google.api.server.spi.config.ApiNamespace;
 
-
 /**
  * An endpoint class we are exposing
  */
@@ -24,5 +23,4 @@ public class MyEndpoint
     {
         return new MyBean();
     }
-
 }
