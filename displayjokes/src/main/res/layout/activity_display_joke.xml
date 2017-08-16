@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context="eu.javimar.gradle.display.DisplayJokeActivity">
+
+
+    <TextView
+        android:id="@+id/tv_joke"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
+        android:textColor="#1e88e5"
+        android:fontFamily="sans-serif-condensed"
+        tools:text="This is a funny joke" />
+
+</RelativeLayout>
