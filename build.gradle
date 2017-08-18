@@ -32,6 +32,9 @@ task runServer {
             daemon true // run task in background
         }
     }
+    doLast {
+        println "Server started."
+    }
 }
 
 task stopServer {
