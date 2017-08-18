@@ -5,8 +5,15 @@
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
-        android:supportsRtl="true">
-        <activity android:name=".DisplayJokeActivity"></activity>
+        android:supportsRtl="true"
+        android:parentActivityName="eu.javimar.gradle.builtitbigger.MainActivity">
+        <activity android:name=".DisplayJokeActivity"
+            android:label="@string/activity_name">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="eu.javimar.gradle.builditbigger.MainActivity" />
+        </activity>
+
     </application>
 
 </manifest>

@@ -1,7 +1,6 @@
 package eu.javimar.gradle.builditbigger;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -58,11 +57,11 @@ public class MainActivityFragment extends Fragment
         return rootView;
     }
 
-
+    // We make sure the ad code will be called when we press the back button of the phone
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState)
+    public void onResume()
     {
-        super.onActivityCreated(savedInstanceState);
+        super.onResume();
 
         mInterstitialAd = new InterstitialAd(getActivity());
         mInterstitialAd.setAdUnitId(getString(R.string.interstitial_ad_unit_id));
@@ -75,5 +74,6 @@ public class MainActivityFragment extends Fragment
                 new JokesAsyncTask(getActivity(), mProgressBar).execute();
             }
         });
+
     }
 }
