@@ -21,3 +21,39 @@ allprojects {
         jcenter()
     }
 }
+
+
+task runServer {
+    dependsOn ":jokesbackend:appengineRun"
+    println "Server starting..."
+    evaluationDependsOn ':jokesbackend'
+    project(':jokesbackend') {
+        appengine {
+            daemon true // run task in background
+        }
+    }
+}
+
+task stopServer {
+    dependsOn ":jokesbackend:appengineStop"
+    doLast {
+        println "Server stopping..."
+    }
+}
+
+task runTest {
+    // To build and start your instrumented tests on your Android device use app:connectedCheck
+    dependsOn ":app:connectedCheck"
+    doLast {
+        println "Finishing my AsyncTask android test..."
+    }
+}
+
+task performTestWithBackendServer {
+    dependsOn = ["runServer", "runTest", "stopServer"]
+    tasks.findByName("runTest").mustRunAfter "runServer"
+    tasks.findByName("stopServer").mustRunAfter "runTest"
+    doLast {
+        println "Testing finished :)"
+    }
+}
